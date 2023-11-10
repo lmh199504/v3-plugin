@@ -1,27 +1,31 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
-import { CRX_TAB_OUTDIR } from './globalConfig'
+import { CRX_OUTDIR } from './globalConfig'
 
 // https://vitejs.dev/config/
 export default defineConfig({
     build: {
         // 输出目录
-        outDir: CRX_TAB_OUTDIR,        
+        outDir: CRX_OUTDIR,
         rollupOptions: {
             input: {
-                newTab: path.resolve(__dirname, 'src/newTab/index.html')
+                index: path.resolve(__dirname, './popup.html'),
+                newTab: path.resolve(__dirname, './newTab.html')
+            },
+            output: {
+                chunkFileNames: 'static/js/[name]-[hash].js',
+                entryFileNames: "static/js/[name]-[hash].js",
+                assetFileNames: "static/[ext]/[name]-[hash].[ext]"
             }
         }
     },
-    optimizeDeps: {
-        entries: ['src/newTab/index.html']
-    },
+    
     server: {
         // 指定dev sever的端口号，默认为5173
-        port: 3002,
+        port: 3000,
         // 自动打开浏览器运行以下页面
-        open: '/',
+        open: '/newTab.html',
         // 设置反向代理
         proxy: {
             // 以下示例表示：请求URL中含有"/api"，则反向代理到http://localhost
