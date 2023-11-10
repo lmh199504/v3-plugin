@@ -1,0 +1,1 @@
+import{_ as e,o as a,c as _,a as c}from"./global-71dba227.js";const n={},s={class:"main"};function t(r,d){return a(),_("div",s)}const o=e(n,[["render",t],["__scopeId","data-v-80da211a"]]),p=c(o);p.mount("#app");
