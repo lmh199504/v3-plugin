@@ -15,7 +15,7 @@
       }
     ],
     "chrome_url_overrides" : {
-      "newtab": "src/newTab/index.html"
+      "newtab": "newTab.html"
     },
     "permissions": ["storage","declarativeContent", "tabs"],
     "host_permissions":[],
@@ -30,7 +30,7 @@
       }
     ],
     "action": {
-      "default_popup": "index.html",
+      "default_popup": "popup.html",
       "default_icon": {
         "16": "/images/app.png",
         "32": "/images/app.png",

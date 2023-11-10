@@ -10,8 +10,13 @@ export default defineConfig({
         outDir: CRX_OUTDIR,
         rollupOptions: {
             input: {
-                index: path.resolve(__dirname, 'index.html'),
-                newTab: path.resolve(__dirname, 'src/newTab/index.html')
+                index: path.resolve(__dirname, './popup.html'),
+                newTab: path.resolve(__dirname, './newTab.html')
+            },
+            output: {
+                chunkFileNames: 'static/js/[name]-[hash].js',
+                entryFileNames: "static/js/[name]-[hash].js",
+                assetFileNames: "static/[ext]/[name]-[hash].[ext]"
             }
         }
     },
