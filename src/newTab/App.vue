@@ -47,6 +47,8 @@ onMounted(() => {
 	// filter: brightness(0.5);
 	.desktop {
 		flex: 1;
+		min-height: 0;
+		overflow: hidden;
 	}
 }
 </style>
