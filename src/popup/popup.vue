@@ -1,4 +1,3 @@
-<script setup></script>
 <template>
-  <div>popup</div>
+	<div>popup</div>
 </template>

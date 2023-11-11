@@ -1,8 +1,8 @@
-import { createApp } from 'vue'
+import { createApp } from 'vue';
 
-import Popup from '@/popup/popup.vue'
-import '@/common/global.less'
+import Popup from '@/popup/popup.vue';
+import '@/common/global.less';
 
-const app = createApp(Popup)
+const app = createApp(Popup);
 
-app.mount('#app')
+app.mount('#app');

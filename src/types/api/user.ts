@@ -1,5 +1,4 @@
-
 export interface VertifyCodeParams {
-  phone: string;
-  region_code: number;
+	phone: string;
+	region_code: number;
 }
