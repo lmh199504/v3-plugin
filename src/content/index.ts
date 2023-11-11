@@ -1,5 +1,6 @@
 import { createApp } from 'vue';
 import Content from './content.vue';
+import '@/common/global.less';
 
 // 创建id为CRX-container的div
 const crxApp = document.createElement('div');

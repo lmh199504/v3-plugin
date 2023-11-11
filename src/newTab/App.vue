@@ -42,6 +42,8 @@ onMounted(() => {
 	display: flex;
 	flex-direction: column;
 	background-image: url(./assets/desktop_bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 	// filter: brightness(0.5);
 	.desktop {
 		flex: 1;
