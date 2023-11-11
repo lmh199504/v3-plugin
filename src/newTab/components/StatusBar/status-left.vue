@@ -3,6 +3,7 @@ import { useSystemStore } from '@/newTab/store';
 import SvgIcon from '@/newTab/components/SvgIcon.vue';
 const store = useSystemStore();
 const handleClickStart = () => {
+	console.log('点击开始');
 	store.toggleKey('showStart');
 };
 const handleClickSearch = () => {

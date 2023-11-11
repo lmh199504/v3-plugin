@@ -2,7 +2,10 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import path from 'path';
 import { CRX_OUTDIR } from './globalConfig';
+import externalGlobals from 'rollup-plugin-external-globals';
+
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+
 // https://vitejs.dev/config/
 export default defineConfig({
 	build: {
@@ -18,6 +21,14 @@ export default defineConfig({
 				entryFileNames: 'static/js/[name]-[hash].js',
 				assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
 			},
+			external: ['vue', 'vue-i18n', 'vue-demi'],
+			plugins: [
+				externalGlobals({
+					vue: 'Vue',
+					'vue-i18n': 'VueI18n',
+					'vue-demi': 'VueDemi',
+				}),
+			],
 		},
 	},
 	server: {

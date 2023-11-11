@@ -35,6 +35,9 @@ module.exports = {
 		'vue/multi-word-component-names': 'off',
 		'@typescript-eslint/no-explicit-any': 'off',
 		'@typescript-eslint/ban-types': 'off',
+		'no-new-func': 'warn', // 禁止使用new Function
+		'no-implied-eval': 'error', // 禁止使用隐式eval
+		'no-eval': 'warn', // 禁止使用eval
 		'prettier/prettier': [
 			'error',
 			{
