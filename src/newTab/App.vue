@@ -6,6 +6,7 @@ import { useSystemStore } from '@/newTab/store';
 import { storeToRefs } from 'pinia';
 import { onMounted } from 'vue';
 import gsap from 'gsap';
+import Desktop from '@/newTab/components/Desktop/index.vue';
 
 const systemStore = useSystemStore();
 const { showStart, showSearch } = storeToRefs(systemStore);
@@ -26,7 +27,7 @@ onMounted(() => {
 
 <template>
 	<div class="content">
-		<div class="desktop"></div>
+		<Desktop />
 		<!-- 状态栏 -->
 		<status-bar />
 		<!-- 开始菜单 -->

@@ -36,3 +36,8 @@ const floatEl = document.querySelector(
 if (floatEl) {
 	floatEl.style.display = 'none';
 }
+
+const HEADER_ID = document.querySelector('#HEADER_ID') as HTMLDivElement;
+if (HEADER_ID) {
+	HEADER_ID.style.display = 'none';
+}

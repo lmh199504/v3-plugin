@@ -1,10 +1,6 @@
-<script setup lang="ts">
-console.log('fsdfa');
-</script>
+<script setup lang="ts"></script>
 <template>
-	<div class="content">
-		<div>sdfasd</div>
-	</div>
+	<div class="content"></div>
 </template>
 <style lang="less" scoped>
 .content {

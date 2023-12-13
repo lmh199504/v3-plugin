@@ -7,6 +7,7 @@ export const useSystemStore = defineStore('system', {
 		statusBarHeight: 40,
 		showSearch: false,
 		bgImg: '',
+		zIndex: 100,
 	}),
 	actions: {
 		setWindowStart(visible: boolean) {

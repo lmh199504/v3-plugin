@@ -15,6 +15,10 @@ export interface ISystem {
 	 * 背景图
 	 */
 	bgImg: string;
+	/**
+	 * 当前最大的 z-index
+	 */
+	zIndex: number;
 }
 
 export type StatusMenuKey = keyof Pick<ISystem, 'showSearch' | 'showStart'>;
