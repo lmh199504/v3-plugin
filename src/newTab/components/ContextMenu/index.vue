@@ -1,6 +1,9 @@
 <template>
 	<div class="menu-wrapper" v-if="visibleMenu" :style="style" ref="menuRef">
+		<div class="menu-item">查看</div>
+		<div class="menu-item">排序方式</div>
 		<div class="menu-item">刷新</div>
+		<div class="menu-item">新建</div>
 	</div>
 	<div class="mask" v-if="visibleMenu" @click="hideMenu"></div>
 </template>
@@ -8,7 +11,7 @@
 import gsap from 'gsap';
 import { computed, watchEffect, ref } from 'vue';
 interface Props {
-	visible: false;
+	visible: boolean;
 	position: {
 		x: number;
 		y: number;
@@ -63,11 +66,19 @@ const hideMenu = () => {
 	left: 0;
 	top: 0;
 	z-index: 100;
-	background: #eeeeee;
+	background: #fff;
 	width: 200px;
 	padding: 10px;
 	border-radius: 8px;
 	user-select: none;
+	.menu-item {
+		font-size: 12px;
+		padding: 4px 0;
+		cursor: pointer;
+		&:hover {
+			background-color: #f2f2f2;
+		}
+	}
 }
 .mask {
 	position: fixed;
