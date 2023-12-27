@@ -7,9 +7,10 @@ export interface APPITEM {
 	height: number;
 	full: boolean;
 	id: string;
+	logo?: string;
 }
 
 export interface IAPP_DATA {
 	appList: APPITEM[];
-	maxZIndex: number;
+	// maxZIndex: number;
 }

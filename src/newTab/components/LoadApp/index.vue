@@ -15,7 +15,7 @@
 					<div v-else class="menu app-full" @click="unFull">
 						<SvgIcon name="un-full" />
 					</div>
-					<div class="menu app-close">
+					<div class="menu app-close" @click="closeApp">
 						<SvgIcon name="close" />
 					</div>
 				</div>
@@ -92,12 +92,21 @@ const onMouseDown = (e: MouseEvent) => {
 			x: end.x - start.x,
 			y: end.y - start.y,
 		};
-		console.log(el.style.left);
 		el.style.left = rect.left + diff.x + 'px';
 		el.style.top = rect.top + diff.y + 'px';
+		if (end.y <= 0) {
+			el.style.top = 0 + 'px';
+		}
 	};
 
-	const handleUp = () => {
+	const handleUp = (e: MouseEvent) => {
+		end.x = e.clientX;
+		end.y = e.clientY;
+
+		if (end.y <= 0) {
+			el.style.top = 0 + 'px';
+		}
+
 		document.removeEventListener('mousemove', handleMove);
 		document.removeEventListener('mouseup', handleUp);
 	};
@@ -130,6 +139,9 @@ const unFull = () => {
 	nextTick(() => {
 		centerApp();
 	});
+};
+const closeApp = () => {
+	appStore.closeApp(props.appItem.id);
 };
 </script>
 

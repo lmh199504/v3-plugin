@@ -32,5 +32,9 @@ const onContextMenu = (e: MouseEvent) => {
 <style scoped lang="less">
 .desktop {
 	flex: 1;
+	overflow: hidden;
+	min-height: 0px;
+	min-width: 0px;
+	position: relative;
 }
 </style>

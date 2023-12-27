@@ -1,23 +1,26 @@
 import type { APPITEM, IAPP_DATA } from '@/newTab/model/app';
 import { defineStore } from 'pinia';
+import { useSystemStore } from './system';
 
 export const useAppStore = defineStore('appOpen', {
 	state: (): IAPP_DATA => ({
 		appList: [],
-		maxZIndex: 1000,
+		// maxZIndex: 1000,
 	}),
 	actions: {
-		openApp(app: Pick<APPITEM, 'appName' | 'url'>) {
+		openApp(app: Pick<APPITEM, 'appName' | 'url' | 'logo'>) {
+			const systemStore = useSystemStore();
+
 			this.appList.push({
 				...app,
-				index: this.maxZIndex + 1,
+				index: systemStore.zIndex + 1,
 				show: true,
 				height: 600,
 				width: 800,
 				full: false,
 				id: Date.now() + '',
 			});
-			this.maxZIndex = this.maxZIndex + 1;
+			systemStore.zIndex = systemStore.zIndex + 1;
 		},
 		hideApp(id: string) {
 			const index = this.appList.findIndex(item => item.id == id);
@@ -29,6 +32,21 @@ export const useAppStore = defineStore('appOpen', {
 			const index = this.appList.findIndex(item => item.id == id);
 			if (index != -1) {
 				this.appList[index].full = !this.appList[index].full;
+			}
+		},
+		closeApp(id: string) {
+			const index = this.appList.findIndex(item => item.id == id);
+			if (index != -1) {
+				this.appList.splice(index, 1);
+			}
+		},
+		updateAppData(id: string, upVal: Partial<APPITEM>) {
+			const index = this.appList.findIndex(item => item.id == id);
+			if (index != -1) {
+				this.appList[index] = {
+					...this.appList[index],
+					...upVal,
+				};
 			}
 		},
 	},

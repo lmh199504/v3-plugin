@@ -5,9 +5,9 @@
 		@dblclick="handleDBClick"
 	>
 		<div class="logo">
-			<img src="@/assets/images/zuiyou.jpg" alt="" />
+			<img :src="appItem.logo" alt="" />
 		</div>
-		<div class="name">最右</div>
+		<div class="name">{{ appItem.appName }}</div>
 	</div>
 </template>
 
@@ -15,6 +15,14 @@
 import { useAppStore } from '@/newTab/store';
 const appStore = useAppStore();
 const emit = defineEmits<{ (event: 'menu', e: MouseEvent): void }>();
+
+const props = defineProps({
+	appItem: {
+		type: Object,
+		required: true,
+	},
+});
+
 const handleContextMenu = (e: MouseEvent) => {
 	e.stopPropagation();
 	e.preventDefault();
@@ -22,8 +30,9 @@ const handleContextMenu = (e: MouseEvent) => {
 };
 const handleDBClick = () => {
 	appStore.openApp({
-		appName: '最右',
-		url: 'https://izuiyou.com/',
+		appName: props.appItem.appName,
+		url: props.appItem.url,
+		logo: props.appItem.logo,
 	});
 };
 </script>
@@ -32,6 +41,7 @@ const handleDBClick = () => {
 	display: flex;
 	flex-direction: column;
 	cursor: pointer;
+	width: fit-content;
 	.logo {
 		width: 40px;
 		height: 40px;

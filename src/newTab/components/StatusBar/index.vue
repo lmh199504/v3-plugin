@@ -3,6 +3,7 @@ import { storeToRefs } from 'pinia';
 import { useSystemStore } from '@/newTab/store';
 import StatusLeft from '@/newTab/components/StatusBar/status-left.vue';
 import { CSSProperties, ComputedRef, computed } from 'vue';
+import StatusCenter from './status-center.vue';
 
 const store = useSystemStore();
 
@@ -17,6 +18,7 @@ const style: ComputedRef<CSSProperties> = computed(() => {
 <template>
 	<div class="status-bar" :style="style">
 		<StatusLeft />
+		<StatusCenter />
 	</div>
 </template>
 <style scoped lang="less">
