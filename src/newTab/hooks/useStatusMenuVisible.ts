@@ -14,10 +14,11 @@ import gsap from 'gsap';
 const useStatusMenuVisible = (key: StatusMenuKey) => {
 	const dialogRef = ref<HTMLDivElement>();
 	const systemStore = useSystemStore();
-	const { statusBarHeight } = storeToRefs(systemStore);
+	const { statusBarHeight, zIndex } = storeToRefs(systemStore);
 	const style: ComputedRef<CSSProperties> = computed(() => {
 		return {
 			bottom: statusBarHeight.value + 'px',
+			zIndex: zIndex.value + 1,
 		};
 	});
 	const handleClick = (e: Event) => {

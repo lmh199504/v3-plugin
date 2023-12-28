@@ -21,6 +21,7 @@ const props = defineProps({
 const handleClick = () => {
 	appStore.updateAppData(props.appItem.id, {
 		index: systemStore.zIndex + 1,
+		show: !props.appItem.show,
 	});
 	systemStore.zIndex = systemStore.zIndex + 1;
 };
@@ -47,8 +48,8 @@ const handleClick = () => {
 		justify-content: center;
 		align-items: center;
 		img {
-			width: 30px;
-			height: 30px;
+			width: 25px;
+			height: 25px;
 			border-radius: 4px;
 		}
 	}

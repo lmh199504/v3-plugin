@@ -9,7 +9,7 @@ const { style, dialogRef } = useStatusMenuVisible('showSearch');
 <style scoped lang="less">
 .search-wrapper {
 	position: fixed;
-	left: 40px;
+	left: 48px;
 	min-height: 40vh;
 	background-color: var(--start-menu-bg);
 	min-width: 700px;

@@ -19,6 +19,11 @@ export const useInstallAppStore = defineStore('installedApp', {
 				logo: new URL('@/assets/images/百度.png', import.meta.url).href,
 				url: 'https://baidu.com',
 			},
+			{
+				appName: 'VSCode',
+				logo: new URL('@/assets/images/vscode.png', import.meta.url).href,
+				url: 'https://vscode.dev/github/lmh199504/windows10',
+			},
 		],
 	}),
 });
