@@ -1,10 +1,11 @@
 <template>
-	<div class="desktop" @contextmenu="onContextMenu">
+	<div class="desktop" @contextmenu="onContextMenu" id="desktop">
 		<AppList @menu="onContextMenu" />
 		<ContextMenu v-model:visible="visible" :position="position" />
 
 		<LoadApp v-for="item in appList" :key="item.appName" :app-item="item" />
 		<NewYear />
+		<Fireworks />
 	</div>
 </template>
 
@@ -13,6 +14,7 @@ import NewYear from '@/newTab/components/NewYear/index.vue';
 import AppList from '@/newTab/components/Application/app-list.vue';
 import ContextMenu from '@/newTab/components/ContextMenu/index.vue';
 import LoadApp from '@/newTab/components/LoadApp/index.vue';
+import Fireworks from '@/newTab/components/Fireworks/index.vue';
 import { reactive, ref } from 'vue';
 import { useAppStore } from '@/newTab/store';
 import { storeToRefs } from 'pinia';
