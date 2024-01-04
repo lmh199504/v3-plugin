@@ -1,5 +1,11 @@
 <template>
-	<div class="app-wrapper" :style="styles" @mousedown="onMouseDown" ref="app">
+	<div
+		class="app-wrapper"
+		:style="styles"
+		@mousedown="onMouseDown"
+		ref="app"
+		@click="setMaxIndex"
+	>
 		<div class="app-area">
 			<div class="app-head" draggable="false">
 				<div class="left">
@@ -31,7 +37,9 @@
 import { computed, onMounted, ref, nextTick } from 'vue';
 import type { APPITEM } from '@/newTab/model/app';
 import SvgIcon from '@/newTab/components/SvgIcon.vue';
-import { useAppStore } from '@/newTab/store';
+import { useAppStore, useSystemStore } from '@/newTab/store';
+
+const systemStore = useSystemStore();
 const app = ref<HTMLDivElement>();
 const props = withDefaults(
 	defineProps<{
@@ -142,6 +150,13 @@ const unFull = () => {
 };
 const closeApp = () => {
 	appStore.closeApp(props.appItem.id);
+};
+
+const setMaxIndex = () => {
+	appStore.updateAppData(props.appItem.id, {
+		index: systemStore.zIndex + 1,
+	});
+	systemStore.zIndex = systemStore.zIndex + 1;
 };
 </script>
 

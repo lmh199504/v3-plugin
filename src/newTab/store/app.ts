@@ -5,7 +5,6 @@ import { useSystemStore } from './system';
 export const useAppStore = defineStore('appOpen', {
 	state: (): IAPP_DATA => ({
 		appList: [],
-		// maxZIndex: 1000,
 	}),
 	actions: {
 		openApp(app: Pick<APPITEM, 'appName' | 'url' | 'logo'>) {

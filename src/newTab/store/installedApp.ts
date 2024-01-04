@@ -15,14 +15,9 @@ export const useInstallAppStore = defineStore('installedApp', {
 				url: 'https://cds.cimcwetrans.com/',
 			},
 			{
-				appName: '百度',
-				logo: new URL('@/assets/images/百度.png', import.meta.url).href,
-				url: 'https://baidu.com',
-			},
-			{
-				appName: 'VSCode',
-				logo: new URL('@/assets/images/vscode.png', import.meta.url).href,
-				url: 'https://vscode.dev/github/lmh199504/windows10',
+				appName: '小红书',
+				logo: new URL('@/assets/images/xiaohongshu.jpg', import.meta.url).href,
+				url: 'https://www.xiaohongshu.com/explore',
 			},
 		],
 	}),

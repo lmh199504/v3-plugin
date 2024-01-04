@@ -4,10 +4,12 @@
 		<ContextMenu v-model:visible="visible" :position="position" />
 
 		<LoadApp v-for="item in appList" :key="item.appName" :app-item="item" />
+		<NewYear />
 	</div>
 </template>
 
 <script setup lang="ts">
+import NewYear from '@/newTab/components/NewYear/index.vue';
 import AppList from '@/newTab/components/Application/app-list.vue';
 import ContextMenu from '@/newTab/components/ContextMenu/index.vue';
 import LoadApp from '@/newTab/components/LoadApp/index.vue';
