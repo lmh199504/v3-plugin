@@ -10,18 +10,21 @@ export const useInstallAppStore = defineStore('installedApp', {
 				logo: new URL('@/assets/images/zuiyou.jpg', import.meta.url).href,
 				url: 'https://izuiyou.com/',
 				showInDesktop: true,
+				onlyOne: false,
 			},
 			{
 				appName: '中集',
 				logo: new URL('@/assets/images/中集.png', import.meta.url).href,
 				url: 'https://cds.cimcwetrans.com/',
 				showInDesktop: true,
+				onlyOne: false,
 			},
 			{
 				appName: '小红书',
 				logo: new URL('@/assets/images/xiaohongshu.jpg', import.meta.url).href,
 				url: 'https://www.xiaohongshu.com/explore',
 				showInDesktop: true,
+				onlyOne: false,
 			},
 			{
 				appName: '设置',
@@ -31,6 +34,14 @@ export const useInstallAppStore = defineStore('installedApp', {
 					() => import('@/newTab/components/Setting/index.vue')
 				),
 				showInDesktop: false,
+				onlyOne: true,
+			},
+			{
+				appName: '淘宝',
+				logo: new URL('@/assets/images/taobao.jpg', import.meta.url).href,
+				url: 'https://www.taobao.com/',
+				showInDesktop: true,
+				onlyOne: false,
 			},
 		],
 	}),
