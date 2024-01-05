@@ -7,7 +7,7 @@ export const useAppStore = defineStore('appOpen', {
 		appList: [],
 	}),
 	actions: {
-		openApp(app: Pick<APPITEM, 'appName' | 'url' | 'logo'>) {
+		openApp(app: Pick<APPITEM, 'appName' | 'url' | 'logo' | 'component'>) {
 			const systemStore = useSystemStore();
 
 			this.appList.push({

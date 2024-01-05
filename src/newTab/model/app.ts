@@ -8,9 +8,9 @@ export interface APPITEM {
 	full: boolean;
 	id: string;
 	logo?: string;
+	component?: any;
 }
 
 export interface IAPP_DATA {
 	appList: APPITEM[];
-	// maxZIndex: number;
 }

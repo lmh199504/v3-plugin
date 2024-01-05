@@ -30,6 +30,7 @@ const handleContextMenu = (e: MouseEvent) => {
 };
 const handleDBClick = () => {
 	appStore.openApp({
+		component: props.appItem.component,
 		appName: props.appItem.appName,
 		url: props.appItem.url,
 		logo: props.appItem.logo,

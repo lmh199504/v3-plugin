@@ -27,14 +27,17 @@
 				</div>
 			</div>
 			<div class="app-content">
-				<iframe :src="props.appItem.url"></iframe>
+				<iframe v-if="props.appItem.url" :src="props.appItem.url"></iframe>
+				<div v-else-if="props.appItem.component">
+					<AppCom />
+				</div>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref, nextTick } from 'vue';
+import { computed, onMounted, ref, nextTick, shallowRef } from 'vue';
 import type { APPITEM } from '@/newTab/model/app';
 import SvgIcon from '@/newTab/components/SvgIcon.vue';
 import { useAppStore, useSystemStore } from '@/newTab/store';
@@ -57,6 +60,9 @@ const props = withDefaults(
 		}),
 	}
 );
+
+const AppCom = shallowRef(props.appItem.component);
+
 const appStore = useAppStore();
 const styles = computed(() => {
 	if (props.appItem.full) {
@@ -67,6 +73,7 @@ const styles = computed(() => {
 			height: '100%',
 			left: 0,
 			top: 0,
+			'border-radius': 0,
 		};
 	} else {
 		return {
@@ -167,7 +174,7 @@ const setMaxIndex = () => {
 	height: 600px;
 	background-color: #fff;
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-	border-radius: 8px;
+	border-radius: 2px;
 	.app-area {
 		display: flex;
 		flex-direction: column;
