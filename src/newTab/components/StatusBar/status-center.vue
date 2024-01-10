@@ -15,5 +15,6 @@ const { appList } = storeToRefs(appStore);
 .status-center {
 	height: 100%;
 	display: flex;
+	flex: 1;
 }
 </style>

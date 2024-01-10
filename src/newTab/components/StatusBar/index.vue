@@ -4,6 +4,7 @@ import { useSystemStore } from '@/newTab/store';
 import StatusLeft from '@/newTab/components/StatusBar/status-left.vue';
 import { CSSProperties, ComputedRef, computed } from 'vue';
 import StatusCenter from './status-center.vue';
+import StatusRight from './status-right.vue';
 
 const store = useSystemStore();
 
@@ -19,6 +20,7 @@ const style: ComputedRef<CSSProperties> = computed(() => {
 	<div class="status-bar" :style="style">
 		<StatusLeft />
 		<StatusCenter />
+		<StatusRight />
 	</div>
 </template>
 <style scoped lang="less">
