@@ -126,7 +126,9 @@ class Snow {
 onMounted(() => {
 	new Snow();
 });
-const comingdate = new Date('2024-02-10 00:00:00');
+const time = new Date();
+const year = time.getFullYear();
+const comingdate = new Date(`${year + 1}-01-01 00:00:00`);
 const date: Record<string, string | number> = reactive({
 	d: 0,
 	h: 0,
